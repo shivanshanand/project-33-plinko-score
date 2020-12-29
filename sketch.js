@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var divisions=[];
 var divisionheight=300;
 
-var particle;
+var particles;
 var turn=0;
 var score=0;
 var gameState="begin";
@@ -86,11 +86,11 @@ function draw() {
   text(1000,730,550);
   pop();
 
-  if(particle!=null){
-    particle.display();
-      if(particle.body.position.x<300){
+  if(particles!=null){
+    particles.display();
+      if(particles.body.position.x<300){
         score=score+500;
-        particle=null;
+        particles=null;
         if(turn>=5) gameState="end";
     }
   }
@@ -109,6 +109,6 @@ function draw() {
 function mousePressed(){
   if(gameState!=="end"){
     turn++;
-    particle=new Particle(mouseX,mouseY);
+    particles=new Particle(mouseX,mouseY);
   }
 }
