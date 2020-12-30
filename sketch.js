@@ -94,9 +94,6 @@ function draw() {
           particles=null;
           if(turn>=5){
              gameState="end"
-             fill("black");
-             textSize(35);
-             text("GAME OVER",width/2,height/2);
           }
         }
       }
@@ -110,9 +107,6 @@ function draw() {
           particles=null;
           if(turn>=5){
              gameState="end"
-             fill("black");
-             textSize(35);
-             text("GAME OVER",width/2,height/2);
           }
         }
       }
