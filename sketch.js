@@ -102,7 +102,7 @@ function draw() {
     if(particles!=null){
       particles.display();
       if(particles.body.position.y>520){
-        if(particles.body.position.x<510 && particles.body.position.x>370){
+        if(particles.body.position.x<510 && particles.body.position.x>350){
           score=score+200;
           particles=null;
           if(turn>=5){
