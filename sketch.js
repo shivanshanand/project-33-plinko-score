@@ -69,31 +69,73 @@ function draw() {
 
   text(500,90,550);
 
-  text(300,170,550);
+  text(500,170,550);
 
-  text(300,250,550);
+  text(500,250,550);
 
-  text(300,330,550);
+  text(200,330,550);
 
   text(200,410,550);
 
   text(200,490,550);
 
-  text(200,570,550);
+  text(100,570,550);
 
   text(100,650,550);
 
-  text(1000,730,550);
+  text(100,730,550);
   pop();
 
-  if(particles!=null){
-    particles.display();
-      if(particles.body.position.x<300){
-        score=score+500;
-        particles=null;
-        if(turn>=5) gameState="end";
+    if(particles!=null){
+      particles.display();
+      if(particles.body.position.y>520){
+        if(particles.body.position.x<300 && particles.body.position.x>1){
+          score=score+500;
+          particles=null;
+          if(turn>=5){
+             gameState="end"
+             fill("black");
+             textSize(35);
+             text("GAME OVER",width/2,height/2);
+          }
+        }
+      }
     }
-  }
+
+    if(particles!=null){
+      particles.display();
+      if(particles.body.position.y>520){
+        if(particles.body.position.x<510 && particles.body.position.x>370){
+          score=score+200;
+          particles=null;
+          if(turn>=5){
+             gameState="end"
+             fill("black");
+             textSize(35);
+             text("GAME OVER",width/2,height/2);
+          }
+        }
+      }
+    }
+
+    if(particles!=null){
+      particles.display();
+      if(particles.body.position.y>520){
+        if(particles.body.position.x<760 && particles.body.position.x>550){
+          score=score+100;
+          particles=null;
+          if(turn>=5){
+             gameState="end";
+          }
+        }
+      }
+    }
+
+      if(turn>=5 && particles.body.position.y>520){
+        fill("black");
+        textSize(60);
+        text("GAME OVER",240,250);
+      }
 
   ground1.display();
 
@@ -109,6 +151,6 @@ function draw() {
 function mousePressed(){
   if(gameState!=="end"){
     turn++;
-    particles=new Particle(mouseX,mouseY);
+    particles=new Particle(mouseX,10,10);
   }
 }
