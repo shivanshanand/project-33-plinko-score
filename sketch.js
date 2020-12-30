@@ -86,6 +86,10 @@ function draw() {
   text(100,730,550);
   pop();
 
+ // if(turn>=5 && particles.body.position.y>520){
+   
+  
+
     if(particles!=null){
       particles.display();
       if(particles.body.position.y>520){
@@ -125,12 +129,6 @@ function draw() {
       }
     }
 
-      if(turn>=5 && particles.body.position.y>520){
-        fill("black");
-        textSize(60);
-        text("GAME OVER",240,250);
-      }
-
   ground1.display();
 
   for(var s=0; s<divisions.length; s++){
@@ -140,6 +138,12 @@ function draw() {
   for(var s=0; s<plinkos.length; s++){
     plinkos[s].display();
   }  
+
+  if(gameState==="end"){
+    fill("black");
+    textSize(60);
+    text("GAME OVER",220,250);
+   }
 }
 
 function mousePressed(){
